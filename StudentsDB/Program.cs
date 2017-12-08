@@ -10,29 +10,38 @@ namespace StudentsDB
     {
         static void Main(string[] args)
         {
-            StudentsDB databaza = new StudentsDB();
-            databaza.LoadStudenty();
-            Student[] zotriedenyStudenti;
-            bool triedene = databaza.Zotried(databaza.poleStudentov, out zotriedenyStudenti);
+            //StudentsDB databaza = new StudentsDB();
+            //databaza.LoadStudenty();
+            //Student[] zotriedenyStudenti;
+            //bool triedene = databaza.Zotried(databaza.poleStudentov, out zotriedenyStudenti);
 
-            foreach (Student s in zotriedenyStudenti)
-            {
-                Console.WriteLine(s.Meno + " " + s.Priezvysko + " " + s.Vek);
-            }
-            Console.WriteLine(" ");
-            foreach (Student s in databaza.poleStudentov)
-            {
-                Console.WriteLine(s.Meno + " " + s.Priezvysko + " " + s.Vek);
-            }
-            Console.WriteLine(" ");
-            foreach (Student s in databaza.zoznamStudentov)
-            {
-                Console.WriteLine(s.Meno + " " + s.Priezvysko + " " + s.Vek);
-            }
+            //foreach (Student s in zotriedenyStudenti)
+            //{
+            //    Console.WriteLine(s.Meno + " " + s.Priezvysko + " " + s.Vek);
+            //}
+            //Console.WriteLine(" ");
+            //foreach (Student s in databaza.poleStudentov)
+            //{
+            //    Console.WriteLine(s.Meno + " " + s.Priezvysko + " " + s.Vek);
+            //}
+            //Console.WriteLine(" ");
+            //foreach (Student s in databaza.zoznamStudentov)
+            //{
+            //    Console.WriteLine(s.Meno + " " + s.Priezvysko + " " + s.Vek);
+            //}
 
-            bool bolo;
-            if (triedene) bolo = true;
-            bolo = (triedene) ? true : false;   // podmienka zapis v jednom riadku
+            //bool bolo;
+            ////if (triedene) bolo = true;
+            //bolo = (triedene) ? true : false;   // podmienka zapis v jednom riadku
+
+            Kolekcie k = new Kolekcie();
+            k.NaplnFrontu();
+
+            k.NaplnZasobnik();
+            k.NaplnTabulku();
+
+
+
 
             Console.ReadLine();
         }
