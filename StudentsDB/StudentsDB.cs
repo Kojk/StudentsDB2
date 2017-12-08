@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ namespace StudentsDB
         string[] Meno = new string[10] { "Peter", "Pavol", "Alex", "Martin", "Karol", "Pista", "Artur", "Frantisek", "Samuel", "Tomas" };
         string[] Priezvisko = new string[10] { "Palfy", "Bondra", "Satan", "Demitra", "Hosa", "Hasek", "Zigo", "Gaborik", "Lintner", "Hamsik" };
         public Student[] poleStudentov = new Student[10];
+        public ArrayList zoznamStudentov = new ArrayList();
 
         public void LoadStudenty()
         {
@@ -21,9 +23,9 @@ namespace StudentsDB
                 student.Meno = Meno[nahodneCislo.Next(10)];
                 student.Priezvysko = Priezvisko[nahodneCislo.Next(10)];
                 student.Vek = nahodneCislo.Next(15, 80);
-
                 poleStudentov[i] = student;
-
+                zoznamStudentov.Add(student);
+                
 
             }
 
